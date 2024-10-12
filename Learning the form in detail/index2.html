@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning the form in detail...</title>
+</head>
+<body>
+    <fieldset>
+        <h2>Registration Form</h2>
+        <form action="">
+
+            <label for="name">Enter Your Name Please:</label>
+            <br>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="email">Enter Your E-mail</label>
+            <br>
+            <input type="email" id="name" name="email" required> 
+
+            <br><br>
+
+            <!-- <label for="country-code">Country Code:</label> -->
+            <label for="phone_number">Enter Your Phone Number</label>
+            <br>
+            <select id="phone_number" name="phone_number" required>
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+91">+91 (India)</option>
+                <!-- Add more country codes as needed -->
+              </select>
+            <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            
+            <br>
+            <br>
+            
+            <label for="occupation">Select your occupation</label>
+            <br>
+             <select name="occupation" id="occupation" >
+                <option value="Farmer">Farmer,No Farmer,No Food</option>
+                <option value="Contractor">
+                  Contractor
+                </option>
+                <option value="Software Engineeer">Software Engineer</option>
+                <option value="Other">Other</option>
+             </select>
+
+           
+             <br><br>
+              <fieldset>
+                <legend>Topic Of Interest</legend>
+                <label for="HTML">HTML</label>
+                <br>
+                <input type="checkbox" id="HTML" name="checkbox">
+
+                <br><br>
+                <label for="CSS">CSS</label>
+                <br>
+                <input type="checkbox" id="CSS" name="checkbox">
+
+                <br>
+                <br>
+                <label for="JAVASCRIPT">JavaScript</label>
+                <br>
+                <input type="checkbox" id="JAVASCRIPT" name="checkbox">
+              </fieldset>
+
+              <br><br>
+              <label for="textarea1">Enter Your Comments</label>
+              <br>
+              <textarea name="textarea1" id="textarea1" cols="70" rows="20"></textarea>
+             
+              <br>
+              <br>
+              <button>Register</button>
+            </form>
+    </fieldset>
+</body>
+</html>

@@ -3,22 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Learning the form in detail...</title>
 </head>
 <body>
-    <fieldset >
-        <form action="">
-            <label for="username">Enter Your Username</label>
-            <input type="text" id="username">
-            
+    <h1>Job Application</h1>
+
+    <form action="">
+
+        <label for="name">Enter your name</label>
+        <br>
+        <input type="text" id="name" required>
+
+        <br><br>
+
+
+
+        <label for="email">Enter your email</label>
+        <br>
+        <input type="email" id="email" required>
+
+        <br><br>
+
+
+        <label for="phone_number">Enter your phone number</label>
+        <br>
+        <select name="phone_number" id="phone_number">
+            <option value="+1">+1,(USA)</option>
+            <option value="+44">+44,(UK)</option>
+            <option value="+91">+91,(India)</option>
+        </select>
+        <input type="tel" id="phone_number" pattern="[0-9]{10}" required>
+
+        <br><br>
+
+
+        <label for="resume">Enter your resume</label>
+        <br>
+        <input type="file" id="resume">
+
+        <br><br>
+
+        <label for="experience">Experience(years)</label>
+        <br>
+        <input type="number" min="0"  max="40">
+        <br><br>
+
+
+        <fieldset>
+            <legend>
+                Skills
+            </legend>
+
+            <input type="checkbox" id="html">
             <br>
+            <label for="html">HTML</label>
             <br>
-            <label for="password">Enter Your Password</label>
-            <input type="text" id="password">
-         </form>
-    </fieldset>
+
+            <input type="checkbox" id="css">
+            <br>
+            <label for="css">CSS</label>
+            <br>
+
+            <input type="checkbox" id="javascript">
+            <br>
+            <label for="javascript">JavaScript</label>
+            <br>
+
+
+        </fieldset>
+
+
+        <br>
+        <label for="higher_education">Higher Education</label>
+        <br>
+        <select name="higher_education" id="higher_education">
+            <option value="High School">High School</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="UnderGraduate">UnderGraduate</option>
+            <option value="PostGraduate">PostGraduate</option>
+        </select>
+
+        <br>
+        <br>
+        <label for="Availability">Availability</label>
+        <br>
+        <br>
+        <input type="radio" id="full_time" name="radio">
+        <br>
+        <label for="full_time">full_time</label>
+
+        <br>
+        <input type="radio" id="part_time" name="radio">
+        <br>
+        <label for="part_time">part_time</label>
+
+
+        <br>
+        <br>
+        <textarea name="Comments" id="Comments" rows="20" cols="40">Additional Comments</textarea>
     
+         <br>
+         <br>
+         <input type="submit" value="Submit Application">   
     
-    
+    </form>
+
 </body>
 </html>
