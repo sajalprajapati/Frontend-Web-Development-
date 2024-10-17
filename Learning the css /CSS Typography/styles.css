@@ -1,0 +1,27 @@
+/* Remove margin and padding from all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for paragraph <p> elements */
+p {
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 1000; /* Sets the boldness */
+    line-height: normal;
+}
+
+/* Custom class to apply the 'Sixtyfour Convergence' font */
+.sixtyfour-convergence-text {
+    font-family: "Sixtyfour Convergence", sans-serif; /* Google font + fallback */
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Custom class to apply the 'LXGW WenKai TC' font */
+.lxgw-wenkai-tc-text {
+    font-family: "LXGW WenKai TC", sans-serif; /* Google font + fallback */
+    font-weight: 400;
+    font-style: normal;
+}
