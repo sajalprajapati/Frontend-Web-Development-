@@ -13,11 +13,15 @@
     background-color: chartreuse;
     /* border: solid black 30px; */
  
-
+    body
+    {
+        background-color: darkgray;
+    }
+    
     h1
     {
         margin-left:20px ;
-        padding: 20px;
+        padding: 20px 30px 40px 50px;
         /* padding: left 10px;;
         padding-top: 10px; */
         /* padding-right: 100px; */
@@ -54,4 +58,19 @@
         border-radius: 5px;
         width:350px;
         height: 350px;
+    }
+    
+    .image_source
+    {
+        height: 500px;
+        width: 500px;
+        background-color: aqua;
+    }
+    
+    .image_source>img
+    {
+        height: 350px;
+        width: 350px;
+        margin-top: 50px;
+        margin-left: 50px;
     }
