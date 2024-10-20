@@ -1,0 +1,38 @@
+*
+{
+ margin:0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.tribute-page
+{
+    background-color:rgba(229, 229, 253, 1);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.introduction-page
+{
+    background-color: blueviolet;
+    border: 10px solid black;
+    position: relative;
+    top:113px;
+    display: flex;
+    /* margin-left: 20px */
+    /* justify-content: flex-end; */
+}
+
+
+#livelihood
+{
+    position: absolute;
+    top:450px;
+}
+
+#biographies
+{
+    position: absolute;
+    top:750px;
+}
