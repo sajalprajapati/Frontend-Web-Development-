@@ -61,7 +61,7 @@ function createRectangle() //factory function
 }
 */
 
-
+/*
 //case 2:
 function createRectangle(x, y) //factory function 
 {
@@ -79,10 +79,89 @@ function createRectangle(x, y) //factory function
 
 }
 
-let x=prompt("Enter the value of x:");
-let y=prompt("Enter the value of y:");
+// let x=prompt("Enter the value of x:");
+// let y=prompt("Enter the value of y:");
 
-let rectangleObj1= createRectangle(x,y);
+let rectangleObj1= createRectangle(5,4);
 console.log(rectangleObj1['area']());
 
+
+let rectangleObj2=createRectangle(6,7);
+console.log(rectangleObj2['area']());
+
+let rectangleObj3=createRectangle(8,9);
+console.log(rectangleObj3['area']());
+
+*/
+
+//applying the construction function:
+
+
+//we have to follow notation---->Pascal Notation [e.g.---first letter of every word is capital]
+
+/*
+function Rectangle(x,y)
+{
+  this.length=x,
+  this.breadth=y,
+  this.area=function()
+  {
+    return this.length*this.breadth;
+  }
+};
+
+
+let rect=new Rectangle(4,5);
+console.log(rect.length);
+console.log(rect.breadth);
+console.log(rect.area());
+
+rect.color='yellow'; //dynamic nature of the object...I can add value like this in the object.
+console.log(rect.color);
+
+
+console.log(rect);
+let react1=new Rectangle(5,6);
+console.log(react1.length);
+console.log(react1.breadth);
+console.log(react1.area());
+console.log(react1.color);
+console.log(react1);
+
+*/
+
+
+
+
+//Constructor Property
+/*
+
+function Rectangle()
+{
+  this.length=1,
+  this.breadth=3,
+  this .area=function()
+  {
+     return this.length*this.breadth;
+  }
+};
+
+
+let rectangleObject=new Rectangle();
+*/
+
+// let a=10;
+// let b=a;
+
+// a++;
+// console.log(a);
+// console.log(b);
+
+
+let a={value:10};
+let b=a;
+a.value++;
+
+console.log(a.value);
+console.log(b.value);
 
