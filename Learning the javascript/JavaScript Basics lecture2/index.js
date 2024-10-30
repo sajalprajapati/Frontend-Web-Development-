@@ -158,10 +158,124 @@ let rectangleObject=new Rectangle();
 // console.log(b);
 
 
+/*
 let a={value:10};
 let b=a;
 a.value++;
 
 console.log(a.value);
 console.log(b.value);
+*/
+
+
+// var  a=10;
+// function inc(a)
+// {
+//   a++;
+// }
+
+// inc(a);
+
+// console.log(a);
+
+
+// let a={value:10};
+
+// function increment(a)
+// {
+//   a.value++;
+// }
+
+
+// increment(a);
+
+// console.log(a.value);
+
+/*
+//performing just an exercise
+function data()
+{
+  let a=b=5; //in this case b will beomce global....
+}
+
+data();
+console.log(b);
+*/
+
+
+//learning the for-in loop
+let rectangle=
+{
+  length:1,
+  breadth:2,
+  area:function()
+  {
+    return this.length*this.breadth;
+  }
+};
+
+// for(let key in rectangle) //key means length,breadth in the object...
+// {
+//   //keys are reflected through key variable
+//   //values are reflected through 
+//   console.log(key,rectangle[key]);
+// }
+
+
+// for(let key of Object.entries(rectangle))
+// {
+//   console.log(key);
+// }
+
+
+
+
+
+
+
+/*
+Kisi object ke under particular properties ya methods exist karta hai ya nhi kaise pta lage
+uske liye niche method define jo ki humne banya hai...
+*/
+
+/*
+if("area" in rectangle)
+{
+  console.log("Ha bhai hai!")
+}
+else
+{
+  console.log('Nhi hai bhai !sorry')
+}
+
+*/
+
+
+let source=
+{
+  value:10
+};
+
+// let dest={}; //this is how we initialise empty object.
+
+// for(let key in source)
+// {
+//   dest[key]=source[key];
+// }
+
+// console.log(dest.value);
+
+
+
+//Object Cloning using the assign operator...
+/*
+let dest=Object.assign({},source);
+console.log(dest.value);
+*/
+
+
+//very easy method
+let dest={...source};
+console.log(dest.value);
+
 
