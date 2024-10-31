@@ -50,5 +50,21 @@ const answer=`The final pricing is $${a+b*a}`;
 console.log(answer);
 
 
-const testingName="Sajal"; //suppose this name is changing with time..
+const testingName="Sajal"; //suppose this name is changing with time..we use ${} to show the dynamic nature in the string..
 console.log(`The final answer is ${testingName}`);
+
+
+//creating the date and time ...
+const now=new Date();
+console.log(now);
+
+console.log(now.getDate());
+console.log(now.getDay());
+console.log(now.getFullYear());
+console.log(now.getHours());
+console.log(now.getMinutes());
+console.log(now.getTimezoneOffset());
+// console.log(now.setFullYear(2025));
+
+
+
