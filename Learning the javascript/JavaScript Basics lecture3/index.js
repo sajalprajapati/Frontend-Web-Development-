@@ -73,7 +73,7 @@
 
 
 
-
+/*
 //creationg of the array
 let number=[1,2,3,4,5];
 console.log(number); //this is how we create and access the array....
@@ -117,12 +117,279 @@ console.log(courses);
 
  let answer = courses.find
  (
-    function(course) //here course is an variable...
+    function(course) //here course is an variable...and it is a callback function..
     {
-        return course.name=='Sajal';
+        return course.name==='Sajal' && course.no===3;
+    }
+ );
+
+
+ let answer1=courses.find( //this is an arrow function.....
+    (course)=>
+    {
+        return course.name=='Shivang' && course.no===3;
     }
  );
 
  console.log(answer);
+ console.log(answer1);
 
- 
+*/
+
+
+
+//removing the elements...
+/*
+let number=[1,2,3,4,5,6,7];
+
+number.pop();
+console.log(number);
+
+number.shift();
+console.log(number);
+
+
+number.splice(2,1);
+console.log(number);
+*/
+
+
+
+
+//removing the elements in the array....
+// let numbers=[1,2,3,4,5];
+// // let number2=numbers;
+// // number=[];
+// // console.log(number);
+
+// numbers.length=0;
+// console.log(numbers);
+
+
+
+
+
+
+
+
+
+
+
+//combining and slicing arrays.
+
+let first=[1,2,3];
+let second=[4,5,6];
+
+let combine=first.concat(second);
+
+console.log(combine);
+
+
+//slicing the array
+console.log(combine.slice(2,4));
+
+
+
+
+//spread operator
+let combine2=[...first,'a',false,...second,'b',true];
+console.log(combine2);
+console.log(combine);
+
+//copy kaise create karu
+let another=[...combine2]; //object cloning....
+console.log(another);
+
+
+
+//iterating an array
+let arr=[10,20,30,40,50];
+for(let value of arr)
+{
+    console.log(value);
+}
+
+//for-each loop
+
+console.log("the number in the array present is:");
+// arr.forEach(
+//     function(number)
+//     {
+//      console.log(number);
+//     }
+// );
+
+arr.forEach(
+    number =>console.log(number)
+);
+
+
+//joining an array
+let numbers=[10,20,30,40,50];
+const joined= numbers.join('$');
+console.log(joined);
+let message='This is    my first   message';
+let parts=message.split(' ');
+console.log(parts);
+
+
+
+//sorting an array:
+let sorting=[3,4,2,35,1];
+sorting.sort();// internal convert digit into strings....
+console.log(sorting);
+
+
+let arrayOfobject=
+[
+    {
+        no:3,
+        name:'Sajal'
+    },
+    {
+        no:1,
+        name:'Shivang'
+    },
+    {
+        no:2,
+        name:'Rudresh'
+    }
+];
+
+
+arrayOfobject.sort
+(
+ (a,b) => a.no - b.no //sorting based on the number...
+);
+
+arrayOfobject.sort
+(
+    (a,b) =>
+        a.name.localeCompare(b.name)  //sorting based on the alphabetical...
+);
+
+
+
+arrayOfobject.sort //sorting based on the number and alphabetical..
+(
+    (a,b) =>
+    {
+        if(a.no!==b.no)
+        {
+            return a.no-b.no;
+        }
+
+        return a.name.localeCompare.b.name;
+    }
+);
+console.log(arrayOfobject);
+
+
+//filtering arrays:
+
+let number3=[1,2,-1,-4];
+
+
+console.log(
+    number3.filter(
+
+    function(number)
+    {
+        return number>=0;
+    }
+));
+
+
+let array=
+[
+    {
+     no:1,
+     name:'Sajal'
+    },
+    {
+     no:2,
+     name:'Shivang'
+    },
+    {
+     no:-3,
+     name:'Anurag'
+    },
+    {
+        no:-4,
+        name:'Sidu'
+    }
+];
+
+console.log
+(
+  array.filter(
+    (value) =>
+    {
+        return value.no>=0 && value.name ==='Sajal';
+    }
+  )
+);
+
+
+//mapping arrays:
+//used to map an element of the array using the mapping arrays.
+let numbers1=[7,8,9,10];
+console.log
+(
+   numbers.map
+   (
+        (value)=>
+        {
+            return 'student_no: '+value;
+        }
+    )
+);
+
+numbers=
+[
+    {
+      no:1,
+      name:'Sajal'
+    },
+    {
+      no:2,
+      name:'Shivang'
+    },
+    {
+      no:3,
+      name:'Trishul'
+    }
+];
+
+let items=numbers.map
+(
+    (value) =>
+    {
+        return 'Student no:'+value.no+value.name;
+    }
+);
+
+console.log(items);
+
+
+
+//mapping the pimitive array to an object.
+let numberss=[1,2,-1,-2];
+let item=numberss.filter(
+    (value) =>
+    {
+        return value>=0;
+    }
+)
+
+let answer=item.map
+(
+    (num) =>
+    {
+        let object1={value:num};
+        return object1;
+    }
+)
+
+
+console.log(answer);
