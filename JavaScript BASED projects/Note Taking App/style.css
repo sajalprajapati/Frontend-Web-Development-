@@ -2,74 +2,84 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body, html {
+    scroll-behavior: smooth;
+    background-color: #f5f5f7; /* Light grey background to match Apple Notes */
 }
 
 #main {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 50px;
-    background-color: #27ae60;
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
-}
-
-body,html
-{
-    scroll-behavior: smooth;
+    gap: 20px; /* Adds spacing between notes */
+    justify-content: center;
+    align-items: start;
 }
 
 .note {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     background-color: white;
-    margin: 15px;
-    margin-top: 50px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .tool {
     width: 100%;
-    background-color: #2c3e50;
-    color: white;
+    background-color: #f0f0f3;
+    color: #8e8e93;
     padding: 10px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    border-bottom: 1px solid #d1d1d6; /* Light grey border for separation */
 }
 
 .tool i {
     padding: 5px;
     cursor: pointer;
+    color: #007aff; /* Apple Notes uses blue accents */
 }
 
-
-.note textarea{
-    border:none;
+.note textarea {
+    border: none;
     width: 100%;
-    height:90%;
-    resize:none;
-    padding:10px;
-    font-size:15px;
-
+    height: 100%;
+    resize: none;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #ffffff;
+    font-family: inherit;
 }
 
-.note textarea:focus
-{
-    border:0;
-    outline:0;
+.note textarea:focus {
+    outline: none; /* Removes outline on focus */
 }
 
-
-#addBtn
-{
+#addBtn {
     position: fixed;
-    right:10px;
-    top:10px;
-    background-color: #2d3436;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007aff; /* Matches Apple’s blue for action buttons */
     color: white;
-    padding:10px;
-    bordeR:0;
-    outline: 0;
-    border-radius:10px ;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50%; /* Circular button */
+    font-size: 24px;
     cursor: pointer;
-    /* font-size:10px; */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for floating effect */
+    transition: transform 0.1s ease-in-out;
+}
+
+#addBtn:hover {
+    transform: scale(1.05); /* Slight scale on hover */
 }
