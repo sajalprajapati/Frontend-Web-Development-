@@ -224,4 +224,22 @@ function walking()
     let c=444;
 }
 
-console.log(c);
+// console.log(c);
+
+
+
+
+
+//learning the reducing array...
+let arr=[1,2,3,4];
+let total=0;
+for(let value of arr)
+{
+    total=total+value;
+}
+
+console.log(total);
+
+
+//to convert whole array in to something
+arr.reduce(callbak)
