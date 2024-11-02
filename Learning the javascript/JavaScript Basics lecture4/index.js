@@ -204,3 +204,24 @@ catch(e)
 
 
 
+
+
+
+//scope: visibility and lifetime of variables and functions...
+
+let a=5;
+console.log(a);
+console.log(a===5);
+// {
+//     let b=5;
+// }
+
+//console.log(b);//<---will show error in this...
+
+
+function walking()
+{
+    let c=444;
+}
+
+console.log(c);
