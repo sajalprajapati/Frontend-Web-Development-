@@ -112,4 +112,27 @@ function simpleInterest(p=100,r=2,y=10)
     return p*r*y/100;
 }
 
-console.log(simpleInterest(20));
+console.log(simpleInterest(20,undefined));
+
+
+
+
+//getter and setter
+let person=
+{
+    fName:'Love',
+    lName:'Babbar'
+};
+
+
+let answer=function()
+{
+    return `${person.fName}  ${person.lName}`;
+};
+
+console.log(answer());
+
+
+
+
+
