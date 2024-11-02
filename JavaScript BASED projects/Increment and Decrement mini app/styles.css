@@ -1,0 +1,52 @@
+*
+{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,body
+{
+    scroll-behavior: smooth;
+}
+
+
+#main
+{
+    /* background-color: aquamarine; */
+    position: relative;
+    width: 300px;
+    height:70px;
+    top:500px;
+    left:300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.incrementAnddecrement_box
+{
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px;
+    margin: 4px;
+}
+
+#plus,#minus
+{
+  background-color: lightblue;
+  padding: 10px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+#number_shown_here
+{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+}
