@@ -118,19 +118,87 @@ console.log(simpleInterest(20,undefined));
 
 
 //getter and setter
+
+//getter---acess properties
+//setter--change or mutate the properties.
+
+
+/*
 let person=
 {
     fName:'Love',
     lName:'Babbar'
 };
+*/
 
-
+/*
 let answer=function()
 {
-    return `${person.fName}  ${person.lName}`;
+    return `${person.fName}  ${person.lName}`; //<---read only function
+};
+*/
+
+
+//getter
+let person=
+{
+    fName:'Love',
+    lName:'Babbar',
+    get fullName() //<---this is not a function
+    {
+      return `${person.fName} ${person.lName}`; //this is fetching the first name and last name from the object.
+    },
+    set fullName(value)
+    {
+    let parts=value.split(' '); //this divides the name in the form of an array.
+    this.fName=parts[0];
+    this.lName=parts[1];
+    }
 };
 
-console.log(answer());
+person.fullName="Rahul Kumar";
+console.log(person.fullName);
+
+
+
+
+
+
+
+
+
+//error handling <-----very important concept !!!!
+let person2=
+{
+    fName:'Sajal',
+    lName:'Prajapati',
+    get fullName2()
+    {
+     return `${this.fName} ${this.lName}`;
+    },
+    set fullName2(value)
+    {
+        if(typeof(value)!==String)
+        {
+            throw new Error("You have not sent a string");
+        }
+        let parts=value.split(' ');
+        this.fName=parts[0];
+        this.lName=parts[1];
+    }
+};
+
+try
+{
+
+person2.fullName2="Rahul Kumar";
+}
+catch(e)
+{
+    // alert('The value present inside the object is of string whereas you type under datatype');
+    // alert(e);
+};
+
 
 
 
