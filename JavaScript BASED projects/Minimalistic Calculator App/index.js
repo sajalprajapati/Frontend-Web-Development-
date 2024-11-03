@@ -1,11 +1,18 @@
-const sevenButton = document.querySelector("#Seven");
-const display = document.querySelector("#display");
-let arr = [];
+const display=document.querySelector("#display");
 
-// Add event listener to the button
-sevenButton.addEventListener('click', () => {
-    arr.push("7"); // Push the value "7" to the array
-    display.textContent = arr.join(""); // Display array as a continuous string
-});
+const numberButtons=document.querySelector(".number_buttons_would_here");
 
-console.log(arr);
+numberButtons.addEventListener
+(
+    "click",
+    ()=>
+    {
+        displaying_the_number_on_the_screen();
+    }
+)
+
+
+let displaying_the_number_on_the_screen=function()
+{
+    display.
+}
