@@ -87,7 +87,7 @@ paragraph.insertAdjacentHTML("beforeend","<p> Jai BajrangBali!</p>")
 
 
 
-
+/*
 // Step 1: Select the parent element
 let headerDiv = document.getElementById("header");
 
@@ -96,3 +96,26 @@ let allH3Elements = headerDiv.querySelectorAll("h3");
 
 // Step 3: Target the second <h3> (index 1) and remove it
 headerDiv.removeChild(allH3Elements[1]);
+*/
+
+
+/*
+let child=document.getElementById("paragraph1");
+
+child.parentElement.removeChild(child);
+console.log(document.getElementById("main"));
+*/
+
+
+
+let p=document.querySelector("p");
+p.style.color="red";
+// p.style.backgroundColor="red";
+
+// document.querySelector("#main").style.cssText='color:green; background-color:yellow; font-size:4em';
+
+// document.querySelector("#main").setAttribute("style", "background-color:red; color:");
+
+
+document.querySelector("#main").setAttribute("id","HeadingKiD");
+
