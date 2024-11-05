@@ -31,8 +31,56 @@ document.querySelector("#main").appendChild(answer);
 // console.log(document.querySelector("body").outerHTML);
 
 
-let answer=document.querySelector("h1").innerText=`Jai Shree Ram!`;
-let answer2=document.querySelector("h1").textContent=`Jai Bajrang Bali`; //<---this one is faster plus have more priority then the innerText
+//let answer=document.querySelector("h1").innerText=`Jai Shree Ram!`;
+//let answer2=document.querySelector("h1").textContent=`Jai Bajrang Bali`; //<---this one is faster plus have more priority then the innerText
+
+
+
+
+
+console.log("Hello my friend how u doing?");
+/*
+let creating_the_child=document.createElement('span');
+let main=document.querySelector("#main");
+main.appendChild(creating_the_child).innerHTML=
+`
+<h1>Jai Shree Ram!</h1>
+<h2>Jai BajrangBali</h2>
+`;
+*/
+
+/*
+document.querySelector("#main").appendChild(document.createElement("span")).innerHTML=
+`
+<h1>How u doing?</h1>`
+*/
+
+
+
+/*
+let element=document.getElementById("myDiv");
+
+element.insertAdjacentHTML("beforebegin","<p>Before the div it is being added.</p>");
+
+element.insertAdjacentHTML("beforeend","<h1>Jai Shree Ram!</h1>");
+
+element.insertAdjacentHTML("afterbegin","<h2>Jai BajrangBali!</h2>");
+
+element.insertAdjacentHTML("afterend","<h3>Jai Sita maa</h3>");
+*/
+
+
+
+/*
+document.querySelector("#myDiv").appendChild(document.createElement("div")).innerHTML=
+`<p>
+Jai Shree Ram!
+</p>`;
+
+
+let paragraph=document.querySelector("p");
+paragraph.insertAdjacentHTML("beforeend","<p> Jai BajrangBali!</p>")
+*/
 
 
 
@@ -40,7 +88,11 @@ let answer2=document.querySelector("h1").textContent=`Jai Bajrang Bali`; //<---t
 
 
 
+// Step 1: Select the parent element
+let headerDiv = document.getElementById("header");
 
+// Step 2: Select all <h3> elements
+let allH3Elements = headerDiv.querySelectorAll("h3");
 
-
-
+// Step 3: Target the second <h3> (index 1) and remove it
+headerDiv.removeChild(allH3Elements[1]);
