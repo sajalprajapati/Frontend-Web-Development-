@@ -54,15 +54,16 @@ btn.addEventListener("click",eventFunction); //<--this is pointing to the eventF
 // btn.removeEventListener("click",eventFunction); //<---this is pointing to the same address of the eventFunction.
 
 
-
+/*
 const content=document.getElementById("wrapper");
 content.addEventListener("click",function(event) //<---event specific data it will provide...
 {
     console.log(event);
 })
- 
+ */
 
 //the default actions
+/*
 const anchorTag=document.querySelector("#Selena");
 anchorTag.addEventListener(
     "click",
@@ -72,3 +73,27 @@ anchorTag.addEventListener(
       console.log("abhi nhi hoga click ");
     }
 )
+*/
+
+
+
+//avoiding too many events.
+
+const wrapper=document.querySelector("#wrapper");
+let myDiv=document.createElement('div');
+
+for(let i=1;i<=100;i++)
+{
+    let newElement=document.createElement('p');
+    newElement.textContent="This is para "+i;
+    myDiv.appendChild(newElement);
+}
+
+myDiv.addEventListener(
+    "click",
+    (event) =>
+    {
+        console.log('Para'+event.target.textContent);
+    }
+)
+wrapper.appendChild(myDiv);
