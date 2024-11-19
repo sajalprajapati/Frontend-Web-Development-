@@ -228,6 +228,7 @@ let p3 = p1.then((userData) => {
 
 
 //fetching the API
+/*
 async function utility()
 {
   try
@@ -243,3 +244,60 @@ async function utility()
 }
 
 utility();
+*/
+
+
+
+
+
+
+//sending the data:
+
+
+async function utility() 
+{
+  let options=
+{
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'Shivang',
+    body: 'Prajapati',
+    userId: 2,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+ };
+
+
+ let content= await fetch('https://jsonplaceholder.typicode.com/posts',options);  
+ let response=content.json();
+ return response;
+};
+
+async function helper()
+{
+  let helping=await utility();
+  return helping;
+}
+
+
+console.log(helper());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
