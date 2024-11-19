@@ -104,6 +104,7 @@ meraPromise.finally(()=>{
 */
 
 
+/*
 // Create a Promise
 const fetchUserData = new Promise((resolve, reject) => {
     console.log("Fetching user data...");
@@ -139,3 +140,106 @@ const fetchUserData = new Promise((resolve, reject) => {
       console.log("Finished fetching user data.");
     });
                 
+    */
+
+
+   
+
+ //promises dependencies
+ /*
+ let p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+      console.log("This is promise p1");
+  }, 3000);
+});
+
+
+
+let p3 = p1.then((userData) => {
+  let p2 = new Promise((resolve, reject) => {
+      resolve("This is promise p2");
+  });
+  return p2;
+});
+
+
+
+  p3.then((value)=>{console.log(value)});
+  */
+
+
+
+
+
+
+
+
+
+
+
+  //learning the async -await
+
+
+  /*
+ async function abcd()
+  {
+    return "Sajal";
+  }
+
+ console.log(abcd());
+
+ */
+
+
+
+/*
+  async function utility()
+  {
+    let uttarakhandWeather=new Promise((resolve,reject) =>{
+      setTimeout(()=>{
+        resolve("Uttarakhand main thand hai");
+      },3000);
+     });
+    
+    
+    
+     let hydcWeather=new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve("Hyderabad main garmi hai kyu ki woh seashore ke pass hai");
+      },1000);
+     });
+      
+
+     let dM= await uttarakhandWeather;
+     let hM=await hydcWeather;
+
+
+     return [dM,hM];
+  }
+
+
+  console.log(utility());
+
+  */
+
+
+
+
+
+
+//fetching the API
+async function utility()
+{
+  try
+  {
+    let content = await fetch('https://jsonplaceholder.typicode.com/posts/1'); 
+    let output=await content.json();
+    console.log(output);
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+}
+
+utility();
