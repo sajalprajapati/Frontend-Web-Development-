@@ -1,4 +1,4 @@
-console.log("Hello World ! How u doing?");
+// console.log("Hello World ! How u doing?");
 
 /*
 //example of the synchronus JS:
@@ -254,6 +254,11 @@ utility();
 //sending the data:
 
 
+
+
+
+
+/*
 async function utility() 
 {
   let options=
@@ -285,6 +290,7 @@ async function helper()
 console.log(helper());
 
 
+*/
 
 
 
@@ -301,3 +307,31 @@ console.log(helper());
 
 
 
+
+
+
+
+
+
+
+
+
+//closures:
+
+let name="Sher";
+
+function init()
+{
+  {
+  var name="Mozilla";
+  }
+  function displayName()
+  {
+    console.log(name);
+  }
+
+  displayName();
+}
+
+
+init();
