@@ -1,20 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const ItemDate = (props) => {
-  const day=props.day;
-  const month=props.month;
-  const year=props.year;
-
+  const { day, month, year } = props;
 
   return (
-    <div className='flex justify-center items-center'>
-      <span>{day}</span>
-      <br/>
-      <span>{month}</span>
-      <br/>
-      <span>{year}</span>
+    <div className="text-center text-gray-700 mt-3 bg-slate-400 flex items-center justify-between ">
+      <span className="block text-xl font-bold">{day}</span>
+      <span className="block text-lg">{month}</span>
+      <span className="block text-sm text-gray-500">{year}</span>
     </div>
-  )
-}
+  );
+};
 
-export default ItemDate
+export default ItemDate;
