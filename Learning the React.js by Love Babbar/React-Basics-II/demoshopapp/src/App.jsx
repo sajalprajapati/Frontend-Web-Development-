@@ -2,6 +2,7 @@ import React from 'react';
 import Item from './components/Item';
 import ItemDate from './components/ItemDate';
 import Cards from './components/Cards';
+import NewProduct from './components/NewProduct';
 
 const App = () => {
   // Demo API response
@@ -27,6 +28,9 @@ const App = () => {
   ];
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
+      
+      <NewProduct/>
+      
       <Cards>
         <Item name={response[0].itemName}>
           {/* <h1>Hello ! I'm child 1</h1> */}
