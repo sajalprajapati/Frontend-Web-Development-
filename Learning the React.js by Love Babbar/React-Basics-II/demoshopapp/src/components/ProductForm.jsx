@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const ProductForm = () => {
 
   //  const [first, setfirst] = useState(second)
-  // const [title,setTitle]=useState('');
-  // const [data,setDate]=useState('');
+  const [newTitle,setTitle]=useState('');
+  const [newDate,setDate]=useState('');
 
   // function titleChangeHandler(event)
   // {
@@ -21,27 +21,39 @@ const ProductForm = () => {
 
 
 
-    const [fullProductInput,setfullProductInput]=useState({
-      title:'',
-      date:''
-    })
+  function submitHandler(e)
+  {
+   e.preventDefault();
 
 
-    function setfullProductInput()
-    {
-      
-    }
+   const productData=
+   {
+     title:newTitle,
+     date:newDate
+   };
+
+
+   console.log(productData);
+   setTitle('');
+   setDate('');
+  }
+
+    
   return (
-    <form className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 space-y-4">
+    <form
+    onSubmit={(e)=>{submitHandler(e)}} 
+    className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 space-y-4">
       {/* Title Field */}
       <div className="flex flex-col">
         <label className="text-gray-700 font-medium mb-1">Title</label>
         <input
+          value={newTitle}
+          onChange={(e)=>{setTitle(e.target.value)}}
           type="text"
           className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="Enter product title"
 
-          onChange={titleChangeHandler}
+          // onChange={titleChangeHandler}
         />
       </div>
 
@@ -49,11 +61,13 @@ const ProductForm = () => {
       <div className="flex flex-col">
         <label className="text-gray-700 font-medium mb-1">Date</label>
         <input
+        value={newDate}
+        onChange={(e)=>{setDate(e.target.value)}}
           type="date"
           min="2023-01-01"
           max="2023-12-12"
           className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          onChange={dateChangeHandler}
+          // onChange={dateChangeHandler}
        />
       </div>
 
