@@ -2,7 +2,9 @@ import React from 'react';
 import Item from './components/Item';
 import ItemDate from './components/ItemDate';
 import Cards from './components/Cards';
-import NewProduct from './components/NewProduct';
+// import ChildComponent from './components/ChildComponent';
+// import NewProduct from './components/NewProduct';
+import ParentComponent from './components/ParentComponents';
 
 const App = () => {
   // Demo API response
@@ -29,7 +31,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-5">
       
-      <NewProduct/>
+      {/* <NewProduct/> */}
       
       <Cards>
         <Item name={response[0].itemName}>
@@ -55,6 +57,10 @@ const App = () => {
           year={response[2].itemYear}
         />
       </Cards>
+
+
+      {/* <ChildComponent/> */}
+      <ParentComponent/>
     </div>
   );
 };
