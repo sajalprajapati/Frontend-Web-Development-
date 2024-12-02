@@ -50,7 +50,7 @@ const App = () => {
     console.log("Listener Removed");  //<---first this will execute 
    }
 
-  },[text])
+  },[text]) //<--[] dependency list  and the value inside this is known as dependencies
 
    function changeHandler(event)
    {
