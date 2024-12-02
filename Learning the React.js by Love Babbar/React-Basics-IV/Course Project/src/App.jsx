@@ -24,7 +24,7 @@ const App = () =>
         
 
         //save data into a variable
-       
+        console.log(output)
         setCourses(output.data);
       }
 
@@ -49,7 +49,7 @@ const App = () =>
 
       <Filter filterData={filterData} />
 
-      <Cards courses={courses} />
+      <Cards  />
 
 
     </div>
