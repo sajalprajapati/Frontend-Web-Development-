@@ -10,6 +10,7 @@ const App = () => {
       <Navbar/>
       <Filter/>
       <Cards/>
+      {/* changing the way  */}
     </div>
   )
 }
