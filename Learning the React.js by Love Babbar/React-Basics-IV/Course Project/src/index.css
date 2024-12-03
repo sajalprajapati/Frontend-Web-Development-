@@ -64,3 +64,34 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.spinner {
+   width: 72px;
+   height: 72px;
+   display: grid;
+   animation: spinner-plncf9 4.8s infinite;
+}
+
+.spinner::before,
+.spinner::after {
+   content: "";
+   grid-area: 1/1;
+   border: 11.5px solid;
+   border-radius: 50%;
+   border-color: #566416 #566416 #0000 #0000;
+   mix-blend-mode: darken;
+   animation: spinner-plncf9 1.2s infinite linear;
+}
+
+.spinner::after {
+   border-color: #0000 #0000 #dbdcef #dbdcef;
+   animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+   100% {
+      transform: rotate(1turn);
+   }
+}
