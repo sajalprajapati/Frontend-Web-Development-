@@ -10,6 +10,7 @@ const App = () => {
       <Navbar/>
       <Filter/>
       <Cards/>
+      {/* transferring the data as props */}
     </div>
   )
 }
