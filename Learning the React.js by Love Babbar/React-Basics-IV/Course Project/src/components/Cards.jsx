@@ -3,11 +3,15 @@ import Card from './Card';
 
 const Cards = (props) => {
   const courses = props.courses;
+  let category=props.category;
   const [likedCourses,setLikedCourses]=useState([]);
-
+  
 
   function getCourses() {
-    let allCourses = [];
+
+    if(category ==="All")
+    {
+      let allCourses = [];
     Object.values(courses).forEach((arr) => {
       if (Array.isArray(arr)) {
         arr.forEach((courseData) => {
@@ -18,6 +22,14 @@ const Cards = (props) => {
       }
     });
     return allCourses;
+    }
+
+    else
+    {
+      //main sirf specific category ka array pass karunga...
+      return courses[category];
+    }
+    
   }
 
   return (

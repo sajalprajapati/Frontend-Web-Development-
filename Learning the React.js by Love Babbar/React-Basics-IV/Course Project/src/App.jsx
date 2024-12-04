@@ -14,6 +14,7 @@ const App = () =>
 
   const [courses,setCourses]=useState([]);
   const [loading,setLoading]=useState(true);
+  const [category,setCategory]=useState(filterData[0].title);
 
   async function fetchData() //it is a async function....
       {
@@ -24,7 +25,7 @@ const App = () =>
           const response=await fetch(apiUrl); //api calling 
           const output=await response.json();
 
-          // console.log(output);
+          console.log(output);
 
           setCourses(output.data);
         }
@@ -55,10 +56,10 @@ const App = () =>
   return (
     <div>
       <Navbar/>
-      <Filter filterData={filterData}/>
+      <Filter filterData={filterData} category={category} setCategory={setCategory}/>
       <div>
         {
-          loading?(<Spinner/>):(<Cards courses={courses}/>)
+          loading?(<Spinner/>):(<Cards courses={courses} category={category}/>)
         }
       </div>
      

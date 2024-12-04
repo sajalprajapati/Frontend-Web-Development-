@@ -1,25 +1,42 @@
 import React from 'react';
 // import { toast } from '@radix-ui/react-toast';
-import { useToast } from "@/hooks/use-toast"
+// import { useToast } from "@/hooks/use-toast"
+// import { toast } from 'react-toastify';
 
 
 const Card = (props) => {
   const course = props.course;
 
-  let likedCourses=props.likedCourses;
-  let setLikedCourses=props.setLikedCourses;
+  // let likedCourses=props.likedCourses;
+  // let setLikedCourses=props.setLikedCourses;
 
 
-  function clickHandler()
-  {
-    // toast("You like this course");
-    if(likedCourses.includes(course.id))
-    {
-      //pehle se like hua pda tha
-      
-    }
+  // function clickHandler()
+  // {
+  //   // toast("You like this course");
+  //   if(likedCourses.includes(course.id))
+  //   {
+  //     //pehle se like hua pda tha
+  //     setLikedCourses((prev)=> prev.filter(cid!==course.id))
+  //     toast.warning("like removed");
+  //   }
+  //   else
+  //   {
+  //     //pehle se like nhi hai ye course....
+  //     //insert karna hai yeah course liked course me....
+  //     if(likedCourses.length===0)
+  //     {
+  //       setLikedCourses([course.id]);
+  //     }
+  //     else
+  //     {
+  //       setLikedCourses((prev) =>[... prev,course.id]);
+  //     }
+
+  //     toast.success("Liked Successful");
+  //   }
     
-  }
+  // }
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300">
@@ -36,7 +53,9 @@ const Card = (props) => {
       <div className="p-4">
         {/* Title */}
         <h2 className="text-lg font-semibold text-gray-800 truncate">
-          {course.title}
+          {
+            course.description.length>100 ? (course.description.substr(0,100)+"..."):(course.description)
+          }
         </h2>
 
         {/* Description */}
@@ -49,7 +68,7 @@ const Card = (props) => {
           {/* Like Button */}
           <button 
           className="text-gray-500 hover:text-red-500 transition-colors"
-          onClick={clickHandler}>
+          >
             ❤️
           </button>
 
