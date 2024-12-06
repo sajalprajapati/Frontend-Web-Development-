@@ -5,7 +5,7 @@ const Homework = () => {
     firstName: "",
     lastName: "",
     email: "",
-    Country: "",
+    Country: "India",
     Street: "",
     City: "",
     State: "",
