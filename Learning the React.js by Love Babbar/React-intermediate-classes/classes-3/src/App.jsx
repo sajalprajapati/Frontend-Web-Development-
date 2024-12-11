@@ -14,9 +14,13 @@ const App = () => {
   return (
     <div>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      
+      
+      
+      {/* Below are the link that we will be using and how to link the word to this link we use Navlink tag okay */}
       <Routes>
         <Route path="/" element={<MainHeader />}>
-          {/* <Route index element={<Home />} /> */}
+          <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
