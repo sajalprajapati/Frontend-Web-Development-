@@ -1,108 +1,101 @@
-import React from 'react'
-import Logo from '../assets/Logo.svg'
-// import { Link } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
-import { useToast } from '@/hooks/use-toast'
-// import { Description } from '@radix-ui/react-toast'
+import React from 'react';
+import Logo from '../assets/Logo.svg';
+import { NavLink } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
 
 const Navbar = (props) => {
- 
-   const {toast} =useToast();
-    //isLoggedIn by default is false :
-  let  {isLoggedIn,setIsLoggedIn} =props;
+  const { toast } = useToast();
+  const { isLoggedIn, setIsLoggedIn } = props;
 
   return (
-    <div className='flex justify-evenly'>
-       <NavLink to='/'>
-         <img src={Logo} alt='logo' width={160} height={32} loading='lazy'/>
-       </NavLink>
+    <header className="bg-gray-50 shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <NavLink to="/">
+          <img src={Logo} alt="logo" className="w-40 h-auto" loading="lazy" />
+        </NavLink>
 
-       <nav>
-          <ul className='flex gap-3'>
-             <li>
-               <NavLink to='/'>
-                 Home
-               </NavLink>
-             </li>
-
-
-             <li>
-               <NavLink to='/'>
-                 About
-               </NavLink>
-             </li>
-
-
-             <li>
-               <NavLink to='/'>
-                 Contact
-               </NavLink>
-             </li>
+        {/* Navigation Links */}
+        <nav>
+          <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-black border-b-2 border-black" : "hover:text-black"
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "text-black border-b-2 border-black" : "hover:text-black"
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "text-black border-b-2 border-black" : "hover:text-black"
+                }
+              >
+                Contact
+              </NavLink>
+            </li>
           </ul>
-       </nav>
+        </nav>
 
-
-       {/* Login signup logout abd dashboard */}
-       <div className='flex ml-4 gap-3 '>
-
-        {/* 
-        
-           { ( yaha apni condition likho jaise hum if else main likhte hai)   <-------yeah walo arrow ki baat kar rha tha main
-           
-           
-           
-           }
-         
-        
-        
-          */}    
-        {/* without using the if else ...we can write this ..below way look at the bracket.... */}
-          {  !isLoggedIn && 
+        {/* Authentication Buttons */}
+        <div className="flex items-center gap-4">
+          {!isLoggedIn && (
             <NavLink to="/login">
-                <button>Login</button>
+              <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 transition">
+                Login
+              </button>
             </NavLink>
-          }
-
-
-          { !isLoggedIn &&
-
+          )}
+          {!isLoggedIn && (
             <NavLink to="/signup">
-                <button
-                onClick={()=>{
-                    toast({description:"Successful Sign Up"})
-                }}>SignUp</button>
+              <button
+                onClick={() => {
+                  toast({ description: "Successful Sign Up" });
+                }}
+                className="px-4 py-2 text-sm font-medium text-white bg-black rounded hover:bg-gray-800 transition"
+              >
+                Sign Up
+              </button>
             </NavLink>
-          }
-
-
-
-
-          { isLoggedIn && 
-
+          )}
+          {isLoggedIn && (
             <NavLink to="/login">
-                <button onClick={()=>{
-                 setIsLoggedIn(false);
-                //   toast.success("Yo have sccessfully logged out");
-                toast({description:"Successful Logged Out"})
-                 }}>Log Out</button>
+              <button
+                onClick={() => {
+                  setIsLoggedIn(false);
+                  toast({ description: "Successfully Logged Out" });
+                }}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 transition"
+              >
+                Log Out
+              </button>
             </NavLink>
-          }
-
-
-
-          
-
-          { isLoggedIn &&
-
+          )}
+          {isLoggedIn && (
             <NavLink to="/dashboard">
-                <button>Dashboard</button>
+              <button className="px-4 py-2 text-sm font-medium text-white bg-black rounded hover:bg-gray-800 transition">
+                Dashboard
+              </button>
             </NavLink>
-          }
+          )}
+        </div>
+      </div>
+    </header>
+  );
+};
 
-
-       </div>
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;

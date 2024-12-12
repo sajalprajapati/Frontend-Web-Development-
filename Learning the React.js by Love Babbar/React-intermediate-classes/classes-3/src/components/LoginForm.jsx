@@ -1,8 +1,14 @@
+import { toast } from '@/hooks/use-toast';
 import React, { useState } from 'react'
 import {AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast'
 
-const LoginForm = () => {
+const LoginForm = ({setIsLoggedIn}) => {
+
+    const {toast} =useToast();
+
+    const navigate=useNavigate();
 
     const [formData,setFormData]=useState({
         email:"",
@@ -20,9 +26,24 @@ const LoginForm = () => {
         
       }))
     }
+
+
+
+    function submitHandler(event)
+    {
+      event.preventDefault();
+
+      setIsLoggedIn(true);
+
+      toast({description:"Successful Sign In"});
+
+      navigate("/dashboard");
+    }
+
+
   return (
     <>
-        <form>
+        <form onSubmit={submitHandler}>
             <label>
              {/* we can also write the label like this ... */}
                 <p>
@@ -69,7 +90,7 @@ const LoginForm = () => {
 
 
 
-            <button>
+            <button >
                 Sign In
             </button>
         </form>
