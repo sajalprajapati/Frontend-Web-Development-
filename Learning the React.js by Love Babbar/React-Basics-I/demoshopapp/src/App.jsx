@@ -5,6 +5,7 @@ import Cards from './components/Cards'
 
 const App = () => {
   //we are applying demo of API response here:
+  //we are using array of object....
   const response=[
     {
       itemName:"Nirma",
@@ -62,3 +63,11 @@ const App = () => {
 }
 
 export default App
+
+/*
+const app =() =>
+{
+  reuturn (
+  )
+}
+*/

@@ -2,6 +2,7 @@ import React from 'react';
 
 const ItemDate = (props) => {
   const { day, month, year } = props;
+  // const day=props.day;
 
   return (
     <div className="text-center text-gray-700 mt-3 bg-slate-400 flex items-center justify-between ">

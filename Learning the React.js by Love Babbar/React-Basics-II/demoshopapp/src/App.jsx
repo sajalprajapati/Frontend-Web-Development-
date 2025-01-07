@@ -37,6 +37,8 @@ const App = () => {
         <Item name={response[0].itemName}>
           {/* <h1>Hello ! I'm child 1</h1> */}
         </Item>
+
+
         <ItemDate
           day={response[0].itemDate}
           month={response[0].itemMonth}
@@ -59,8 +61,9 @@ const App = () => {
       </Cards>
 
 
-      {/* <ChildComponent/> */}
+      
       <ParentComponent/>
+      <ChildComponent/>
     </div>
   );
 };
