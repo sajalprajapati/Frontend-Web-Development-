@@ -19,9 +19,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MasterPage />}>
           <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<div>404! Page Not Found.</div>} />
         </Route>
       </Routes>
