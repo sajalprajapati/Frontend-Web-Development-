@@ -1,8 +1,21 @@
 import React from 'react'
+import Template from '../components/Template'
+import Sig from '../assets/Signup.png'
 
-const Signup = () => {
+
+
+const Signup = ({setIsLoggedIn}) => {
   return (
-    <div>Signup</div>
+    <div>
+      <Template
+        title="join the millions learning to code with studyNotion for free"
+        desc1="build skills for today tomorrow and beyond"
+        desc2="education to future proof your career"
+        image={Sig}
+        formtype="signup"
+        setIsLoggedIn={setIsLoggedIn}
+      />
+    </div>
   )
 }
 

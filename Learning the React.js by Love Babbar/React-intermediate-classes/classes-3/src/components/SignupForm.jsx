@@ -1,89 +1,90 @@
-import React, { useState } from 'react'
-import {AiOutlineEye,AiOutlineEyeInvisible} from 'react-icons/ai'
+import React, { useState } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+const SignupForm = ({setIsLoggedIn}) => {
 
-const SignupForm = () => {
+  const navigate=useNavigate();
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
 
+  const [showCreatePassword, setShowCreatePassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  // name helps figure out which part of formData to update.
-// value ensures the input field always shows the latest data from formData.
-
-  const [formData,setFormData]=useState({
-    firstname:"",
-    lastname:"",
-    email:"",
-    password:"",
-    confirmPassword:""
-  })
-
-
-  const [showPassword,setShowPassword]=useState(false);
-
-  function changeHandler(event) 
-  {
-    setFormData((prev)=>({
+  function changeHandler(event) {
+    setFormData((prev) => ({
       ...prev,
-      [event.target.name]:event.target.value
-    }))
+      [event.target.name]: event.target.value
+    }));
   }
+
+
+
+
+  function submitHandler(event) {
+    event.preventDefault();
+
+    setIsLoggedIn(true); // Update parent state to indicate logged-in status
+
+    toast.success("You are successfully Signup!", { // Show toast notification
+      position: "top-center", // Position of the toast
+      autoClose: 3000, // Close automatically after 3 seconds
+    });
+
+    navigate("/login"); // Navigate to the dashboard
+  }
+
+
+
   return (
     <div>
-      {/* student-instructor tab */}
-
+      {/* Student-Instructor tab */}
       <div>
-        <button>
-          student
-        </button>
-
-        <button>
-          instructor
-        </button>
+        <button>Student</button>
+        <button>Instructor</button>
       </div>
 
+      {/* Form creation */}
+      <form onSubmit={submitHandler}>
 
-
-
-      {/* form creation */}
-      <form>
-        
-
-        {/* contain only first name and last name: */}
+      
+        {/* First Name and Last Name */}
         <div>
-           <label>
-          <p>First Name <sup>*</sup></p>
+          <label>
+            <p>First Name <sup>*</sup></p>
+            <input
+              type='text'
+              required
+              name='firstname'
+              onChange={changeHandler}
+              placeholder='Enter your first name'
+              value={formData.firstname}
+            />
+          </label>
 
-          <input
-            type='text'
-            required
-            name='firstname'
-            onChange={changeHandler}
-            placeholder='Enter your first name'
-            value={formData.firstname}
-          />
-           </label>
-
-
-
-           <label>
-          <p>Last Name <sup>*</sup></p>
-
-          <input
-            type='text'
-            required
-            name='lastname'
-            onChange={changeHandler}
-            placeholder='Enter your last name'
-            value={formData.lastname}
-          />
-           </label>
+          <label>
+            <p>Last Name <sup>*</sup></p>
+            <input
+              type='text'
+              required
+              name='lastname'
+              onChange={changeHandler}
+              placeholder='Enter your last name'
+              value={formData.lastname}
+            />
+          </label>
         </div>
 
-
-
-        {/* containe the email address... */}
+        {/* Email Address */}
         <label>
           <p>Email Address <sup>*</sup></p>
-
           <input
             type='email'
             placeholder='Enter your email address'
@@ -94,57 +95,46 @@ const SignupForm = () => {
           />
         </label>
 
-
-
-        {/* create password and confirm password logic... */}
+        {/* Password Fields */}
         <div>
+          {/* Create Password */}
           <label>
             <p>Create Password <sup>*</sup></p>
             <input
               required
-              type={showPassword?('text'):('password')}
+              type={showCreatePassword ? 'text' : 'password'}
               placeholder='Enter password'
               name='password'
               value={formData.password}
               onChange={changeHandler}
             />
-
-
-            <span onChange={() => setShowPassword((prev)=>!prev)}>
-              {showPassword? (<AiOutlineEyeInvisible/>):(<AiOutlineEye/>)}
+            <span onClick={() => setShowCreatePassword((prev) => !prev)}>
+              {showCreatePassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </span>
           </label>
 
-
-
-
+          {/* Confirm Password */}
           <label>
-          <p>Confirm Password <sup>*</sup></p>
+            <p>Confirm Password <sup>*</sup></p>
             <input
               required
-              type={showPassword?('text'):('password')}
+              type={showConfirmPassword ? 'text' : 'password'}
               placeholder='Enter password'
               name='confirmPassword'
               value={formData.confirmPassword}
               onChange={changeHandler}
             />
-
-
-            <span onChange={() => setShowPassword((prev)=>!prev)}>
-              {showPassword? (<AiOutlineEyeInvisible/>):(<AiOutlineEye/>)}
+            <span onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              {showConfirmPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </span>
           </label>
         </div>
 
-
-
-       {/* create button here */}
-       <button>
-        Create Account
-       </button>
+        {/* Submit Button */}
+        <button>Create Account</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignupForm
+export default SignupForm;
