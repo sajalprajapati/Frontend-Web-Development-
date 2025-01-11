@@ -1,38 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Spinner from './Spinner';
+import useGif from '../hooks/useGif';
 
 const VITE_API_KEY = import.meta.env.VITE_REACT_APP_GIPHY_API_KEY;
 
 const Tag = () => {
-  const [gif, setGif] = useState('');
-  const [loading, setLoading] = useState(false);
+ 
   const [tag, setTag] = useState('car');
 
-  const fetchData = async () => {
-    setLoading(true);
-    try {
-      const { data } = await axios.get(
-        `https://api.giphy.com/v1/gifs/random?api_key=${VITE_API_KEY}&tag=${tag}`
-      );
-      const imageSource = data.data.images.downsized_large.url;
-      setGif(imageSource);
-    } 
+   // const [gif, setGif] = useState('');
+  // const [loading, setLoading] = useState(false);
+  // const fetchData = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await axios.get(
+  //       `https://api.giphy.com/v1/gifs/random?api_key=${VITE_API_KEY}&tag=${tag}`
+  //     );
+  //     const imageSource = data.data.images.downsized_large.url;
+  //     setGif(imageSource);
+  //   } 
     
     
-    catch (error) {
-      console.error('Error fetching the GIF:', error);
-    }
-    setLoading(false);
-  };
+  //   catch (error) {
+  //     console.error('Error fetching the GIF:', error);
+  //   }
+  //   setLoading(false);
+  // };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const handleClick = () => {
-    fetchData();
-  };
+
+  const {gif,loading,fetchData}=useGif(tag);
+
+
 
   const handleChange = (event) => {
     setTag(event.target.value);
@@ -60,7 +63,7 @@ const Tag = () => {
         placeholder="Enter a tag"
       />
       <button
-        onClick={handleClick}
+        onClick={()=>{fetchData(tag)}}
         className="w-full max-w-md bg-blue-600 text-white text-lg py-2 rounded-md hover:bg-blue-700 transition-colors duration-200"
       >
         Generate
