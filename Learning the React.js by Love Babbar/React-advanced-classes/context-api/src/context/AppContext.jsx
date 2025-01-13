@@ -1,12 +1,13 @@
 import { createContext, useState } from "react";
+import { baseUrl } from "../baseURL";
 
 // Step 1: Create a "storage room" (common storage space)
 // `AppContext` is the label for this storage room where shared data will be stored.
-const AppContext = createContext();
+export const AppContext = createContext();
 
 // Step 2: Define the "manager" of the storage room (AppContextProvider)
 // This manager decides what items should go into the storage room and how they will be shared.
-export function AppContextProvider({ children }) {
+export  default function AppContextProvider({ children }) {
   // Step 3: Define state variables (the items to be stored in the storage room).
   // These are the variables that components in the app may need to share or modify.
   const [loading, setLoading] = useState(false); // Indicates if data is being loaded
@@ -27,7 +28,9 @@ export function AppContextProvider({ children }) {
    {
      setLoading(true);
      
-     let url =`https://codehelp-apis.vercel.app/api/get-blog?page=${page}`;
+     let url = `${baseUrl}?page=${page}`;
+     console.log("printing the final URL");
+
 
 
      try
@@ -58,7 +61,7 @@ export function AppContextProvider({ children }) {
 
    function handlePageChange(page)
    {
-    setPage(page+1);
+    setPage(page);
     fetchBlogPosts(page);
    }
  
