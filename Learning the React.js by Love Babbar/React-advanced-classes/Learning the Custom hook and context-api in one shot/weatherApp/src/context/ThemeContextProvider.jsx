@@ -11,7 +11,7 @@ const ThemeContextProvider = ({children}) =>
      (
        (prev) =>
         (
-         prev==="light"?"dark":"light"
+         prev=="light"?"dark":"light"
         )
     )
    }
