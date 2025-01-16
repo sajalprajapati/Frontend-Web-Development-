@@ -14,38 +14,50 @@ const Cart = () => {
   }, [cart]);
 
   return (
-    <div>
+    <div className="p-8 bg-gray-100 min-h-screen">
       {cart.length > 0 ? (
-        <div>
-          {/* Cart Items */}
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12">
+          {/* Left Column: Cart Items */}
+          <div className="space-y-8">
+            <h1 className="text-4xl  text-center font-bold text-gray-900">Your Cart</h1>
             {cart.map((item, index) => (
               <CartItem key={item.id || index} item={item} itemIndex={index} />
             ))}
           </div>
 
-          {/* Summary */}
-          <div>
-            <div>
-              <div>Your Cart</div>
-              <div>Summary</div>
-              <p>
-                <span>Total Items: {cart.length}</span>
+          {/* Right Column: Summary */}
+          <div className="bg-white shadow-xl rounded-lg p-8 space-y-6 w-full max-w-md mx-auto lg:mx-0 self-start border border-gray-200">
+            <h2 className="text-2xl font-semibold text-gray-900">Order Summary</h2>
+            
+            <div className="space-y-4 text-gray-700">
+              <p className="flex justify-between">
+                <span className="text-lg">Total Items:</span> 
+                <span className="font-medium">{cart.length}</span>
+              </p>
+              <p className="flex justify-between text-xl font-semibold text-gray-900">
+                <span>Total Amount:</span> 
+                <span className="text-green-500">${totalAmount.toFixed(2)}</span>
               </p>
             </div>
 
-            <div>
-              <p>Total Amount: ${totalAmount.toFixed(2)}</p>
-              <button>Checkout</button>
-            </div>
+            <button 
+              className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 text-lg"
+            >
+              Proceed to Checkout
+            </button>
           </div>
         </div>
       ) : (
         // Empty Cart Message
-        <div>
-          <h1>Cart is Empty</h1>
+        <div className="text-center mt-24">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">Your Cart is Empty</h1>
+          <p className="text-lg text-gray-600 mb-6">Looks like you haven't added anything yet!</p>
           <NavLink to="/">
-            <button>Shop Now</button>
+            <button 
+              className="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300 text-lg"
+            >
+              Shop Now
+            </button>
           </NavLink>
         </div>
       )}

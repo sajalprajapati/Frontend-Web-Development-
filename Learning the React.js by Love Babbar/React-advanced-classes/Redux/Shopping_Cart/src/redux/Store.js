@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import  CartSlice  from "./Slices/cartSlice";
+import  CartSlice  from "./Slices/CartSlice";
 // import CounterSlice from "./slices/CounterSlice";
+
 
 
 //configureStore is creating the centralised store...
@@ -8,6 +9,6 @@ import  CartSlice  from "./Slices/cartSlice";
 
 export const store =configureStore({
     reducer:{
-        counter:CartSlice
+        cart:CartSlice
     },
 })
